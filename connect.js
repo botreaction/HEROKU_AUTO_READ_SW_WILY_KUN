@@ -46,18 +46,6 @@ version
 })
 
 store.bind(ZassTdr.ev)
-
-
- // anticall auto block
-    ZassTdr.ws.on('CB:call', async (json) => {
-    const callerId = json.content[0].attrs['call-creator']
-    if (json.content[0].tag == 'offer') {
-    ZassTdr.sendMessage(callerId, { text: `*Sistem otomatis block!*\n*Jangan menelpon bot*!\n*Silahkan Hubungi Owner Untuk Dibuka !*`}, { quoted : pa7rick })
-        let pa7rick = await ZassTdr.sendContact(callerId, global.owner)
-    await sleep(8000)
-    await ZassTdr.updateBlockStatus(callerId, "block")
-    }
-    })
     
 ZassTdr.ev.process(
 async (events) => {
