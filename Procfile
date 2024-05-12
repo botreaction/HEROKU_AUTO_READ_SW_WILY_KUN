@@ -1,1 +1,1 @@
-worker: npm i -g pm2 && pm2 start ./connect.js && pm2 save && pm2 logs
+worker: npm install -g npm@10.7.0 && npm start
